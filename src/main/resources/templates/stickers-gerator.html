@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STICKERS MAKER</title>
+</head>
+<body>
+    <h1>GERADOR DE FIGURINHAS</h1>
+    <form method="post" action="/stickers-gerator">
+        <label>URL DA IMAGEM: </label>
+        <input type="url" name="url">
+        <label>TITULO: </label>
+        <input type="text" name="message">
+        <label>NOME DO ARQUIVO: </label>
+        <input type="text" name="fileName">
+        <button type="submit">GERAR IMAGEM</button>
+    </form>
+    <tbody>
+        <tr th:each="data: ${sticker}">
+            <td th:text="${data.url}"></td>
+            <td th:text="${data.message}"></td>
+            <td th:text="${data.fileName}"></td>
+        </tr>
+    </tbody>
+</body>
+</html>
