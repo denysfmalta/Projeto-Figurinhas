@@ -12,8 +12,8 @@ import java.net.URL;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StickersGerator {
-    public void generateStickers(String url, String message, String fileName) {
+public class StickerGenerator {
+    public void generateSticker(String url, String message, String fileName) {
         try {
             InputStream inputStream = new URL(url).openStream();
             BufferedImage originalImage = ImageIO.read(inputStream);
